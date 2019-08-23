@@ -1,35 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="IntecPract2.MainPage">
+             x:Class="IntecPract2.MainPage"
+             BackgroundImageSource="yes.jpg">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-
-        <StackLayout HeightRequest="50">
-            <Label Text="Your Logo"
-            HorizontalOptions="Center"/>
-            <Button HorizontalOptions="End"/>
-
-        </StackLayout>
-        <BoxView Color="Red"
-             HeightRequest="180"
-             VerticalOptions="Center"
-             HorizontalOptions="FillAndExpand" />
-        <StackLayout HorizontalOptions="CenterAndExpand">
-        <StackLayout HorizontalOptions="Center" Padding="10" Spacing="10">
-            <Button Text="Weather"/>
-            <Button Text="Crew"/>
-        </StackLayout>
-            <StackLayout HorizontalOptions="Center" Padding="20" Spacing="10">
-            <Button Text="Location"/>
-            <Button Text="Radio"/>
-        </StackLayout>
-        </StackLayout>
+    <StackLayout HorizontalOptions="Center">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--<Label Text="Here you can place your own awesome image!" TextColor="blue" 
+                       HorizontalOptions="FillAndExpand" Grid.Row="0" BackgroundColor="Red"/>-->
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                   Text="Your Logo" FontSize="30" FontFamily="Sans" FontAttributes="Bold" BackgroundColor="Beige"/>
+                <ImageButton Source="i.png"  Grid.Row="0" Grid.Column="3" HorizontalOptions="End" VerticalOptions="End" />
+            
+            
+            <Frame OutlineColor="Red" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="4" BackgroundColor="Transparent">
+            <Label Text="Here you can place an awesome image!" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Black"
+        FontSize="30" Grid.ColumnSpan="4" />
+            </Frame>
+            <Button ImageSource="Weather.png" Opacity="0.9" WidthRequest="150" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand"/>
+            <Button ImageSource="Crew.png" Opacity="0.9"  WidthRequest="150" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  HorizontalOptions="EndAndExpand"/>
+            <Button ImageSource="Locations.png" Opacity="0.9" WidthRequest="150" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+            <Button ImageSource="Radio.png" Opacity="0.9" WidthRequest="150" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"  HorizontalOptions="StartAndExpand"/>
+        </Grid>
     </StackLayout>
-    
+ </ContentPage>
 
-</ContentPage>
